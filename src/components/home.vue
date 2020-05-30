@@ -1,10 +1,17 @@
 <template>
-    <div>Home</div>
+    <div>
+      <el-button type="info" round @click="logout">推出</el-button>
+    </div>
 </template>
 
 <script>
     export default {
-        name: "home"
+      methods: {
+        logout () {
+          window.sessionStorage.clear();
+          this.$router.push("/login");
+        }
+      }
     }
 </script>
 
